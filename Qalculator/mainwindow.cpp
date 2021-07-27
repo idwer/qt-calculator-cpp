@@ -150,5 +150,19 @@ void MainWindow::on_btnCE_clicked()
 
 void MainWindow::on_btnResult_clicked()
 {
-//    ui->lineEdit_LeftHand->setText(ui->lineEdit_LeftHand->text() + ui->btnResult->text());
+    QColor color = ui->btnResult->palette().color(QWidget::backgroundRole());
+
+    if (color.isValid()) {
+        QString s = QString("background-color: %1").arg(color.name());
+        ui->btnAdd->setStyleSheet(s);
+        ui->btnDivide->setStyleSheet(s);
+        ui->btnSubtract->setStyleSheet(s);
+        ui->btnMultiply->setStyleSheet(s);
+    }
+
+    /* reset state */
+    add = false;
+    subtract = false;
+    divide = false;
+    multiply = false;
 }
