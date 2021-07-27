@@ -102,21 +102,29 @@ void MainWindow::on_btnSeparator_clicked()
 void MainWindow::on_btnAdd_clicked()
 {
     left = ui->lineEdit_LeftHand->text().toDouble();
+
+    add = true;
 }
 
 void MainWindow::on_btnSubtract_clicked()
 {
     left = ui->lineEdit_LeftHand->text().toDouble();
+
+    subtract = true;
 }
 
 void MainWindow::on_btnDivide_clicked()
 {
     left = ui->lineEdit_LeftHand->text().toDouble();
+
+    divide = true;
 }
 
 void MainWindow::on_btnMultiply_clicked()
 {
     left = ui->lineEdit_LeftHand->text().toDouble();
+
+    multiply = true;
 }
 
 void MainWindow::on_btnCE_clicked()
