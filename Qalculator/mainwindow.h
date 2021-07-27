@@ -36,5 +36,7 @@ private slots:
     void on_btnDivide_clicked();
     void on_btnMultiply_clicked();
     void on_btnResult_clicked();
+
+    void on_btnCE_clicked();
 };
 #endif // MAINWINDOW_H

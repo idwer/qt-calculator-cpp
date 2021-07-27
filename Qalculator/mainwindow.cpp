@@ -8,6 +8,9 @@ bool subtract = false;
 bool divide = false;
 bool multiply = false;
 
+int64_t left = 0;
+int64_t right = 0;
+
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
@@ -105,6 +108,16 @@ void MainWindow::on_btnMultiply_clicked()
     int64_t right = ui->lineEdit_RightHand->text().toDouble();
 
     ui->lineEdit->setText(QString::number(ArithmeticOperation::Multiply(left, right)));
+}
+
+void MainWindow::on_btnCE_clicked()
+{
+    left = 0;
+    right = 0;
+
+    ui->lineEdit->clear();
+    ui->lineEdit_LeftHand->clear();
+    ui->lineEdit_RightHand->clear();
 }
 
 void MainWindow::on_btnResult_clicked()
