@@ -1,18 +1,14 @@
 A simple calculator written in C++.
-===================================
+-----------------------------------
 
-
-Requirements:
+Requirements
 ------------
-
-This program was developed using QTCreator 4.11.0, and Qt 5.12.8.
+This program was developed using Qt Creator 4.11.0 and Qt 5.12.8.
 
 Install qt5-default, qt5-gmake-bin.
-Optionally install qtcreator.
+Optionally install Qt Creator.
 
 To generate a Makefile, you need to install and run 'qmake'.
-
-
 
 Adding new features using QTCreator
 -----------------------------------
