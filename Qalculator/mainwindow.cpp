@@ -153,6 +153,18 @@ void MainWindow::on_btnResult_clicked()
     right = ui->lineEdit_RightHand->text().toDouble();
     QColor color = ui->btnResult->palette().color(QWidget::backgroundRole());
 
+    if (add)
+        ui->lineEdit->setText(QString::number(ArithmeticOperation::Add(left, right)));
+
+    if (subtract)
+        ui->lineEdit->setText(QString::number(ArithmeticOperation::Subtract(left, right)));
+
+    if (divide)
+        ui->lineEdit->setText(QString::number(ArithmeticOperation::Divide(left, right)));
+
+    if (multiply)
+        ui->lineEdit->setText(QString::number(ArithmeticOperation::Multiply(left, right)));
+
     if (color.isValid()) {
         QString s = QString("background-color: %1").arg(color.name());
         ui->btnAdd->setStyleSheet(s);
