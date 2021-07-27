@@ -19,6 +19,7 @@ private:
     Ui::MainWindow *ui;
     void updateLeftHandField(QString);
     void updateRightHandField(QString);
+    void updateFields(QString);
 
 private slots:
     void on_btnSeparator_clicked();

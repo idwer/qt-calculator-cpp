@@ -36,70 +36,70 @@ void MainWindow::updateRightHandField(QString s)
     ui->lineEdit_RightHand->setText(ui->lineEdit_RightHand->text().append(s));
 }
 
+void MainWindow::updateFields(QString s)
+{
+    if (add || subtract || divide || multiply) {
+        updateRightHandField(s);
+    } else {
+        updateLeftHandField(s);
+    }
+}
+
 void MainWindow::on_btnZero_clicked()
 {
-    QString s = ui->btnZero->text();
-    add ? updateRightHandField(s) : updateLeftHandField(s);
+    updateFields(ui->btnZero->text());
 }
 
 void MainWindow::on_btnOne_clicked()
 {
-    QString s = ui->btnOne->text();
-    add ? updateRightHandField(s) : updateLeftHandField(s);
+    updateFields(ui->btnOne->text());
 }
 
 void MainWindow::on_btnTwo_clicked()
 {
-    QString s = ui->btnTwo->text();
-    add ? updateRightHandField(s) : updateLeftHandField(s);
+    updateFields(ui->btnTwo->text());
 }
 
 void MainWindow::on_btnThree_clicked()
 {
-    QString s = ui->btnThree->text();
-    add ? updateRightHandField(s) : updateLeftHandField(s);
+    updateFields(ui->btnThree->text());
 }
 
 void MainWindow::on_btnFour_clicked()
 {
-    QString s = ui->btnFour->text();
-    add ? updateRightHandField(s) : updateLeftHandField(s);
+    updateFields(ui->btnFour->text());
 }
 
 void MainWindow::on_btnFive_clicked()
 {
-    QString s = ui->btnFive->text();
-    add ? updateRightHandField(s) : updateLeftHandField(s);
+    updateFields(ui->btnFive->text());
 }
 
 void MainWindow::on_btnSix_clicked()
 {
-    QString s = ui->btnSix->text();
-    add ? updateRightHandField(s) : updateLeftHandField(s);
+    updateFields(ui->btnSix->text());
 }
 
 void MainWindow::on_btnSeven_clicked()
 {
-    QString s = ui->btnSeven->text();
-    add ? updateRightHandField(s) : updateLeftHandField(s);
+    updateFields(ui->btnSeven->text());
 }
 
 void MainWindow::on_btnEight_clicked()
 {
-    QString s = ui->btnEight->text();
-    add ? updateRightHandField(s) : updateLeftHandField(s);
+    updateFields(ui->btnEight->text());
 }
 
 void MainWindow::on_btnNine_clicked()
 {
-    QString s = ui->btnNine->text();
-    add ? updateRightHandField(s) : updateLeftHandField(s);
+    updateFields(ui->btnNine->text());
+
 }
 
 void MainWindow::on_btnSeparator_clicked()
 {
-    QString s = ui->btnSeparator->text();
-    add ? updateRightHandField(s) : updateLeftHandField(s);
+    updateFields(ui->btnSeparator->text());
+
 }
 
 void MainWindow::on_btnAdd_clicked()
