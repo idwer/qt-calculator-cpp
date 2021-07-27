@@ -28,12 +28,12 @@ MainWindow::~MainWindow()
 
 void MainWindow::updateLeftHandField(QString s)
 {
-        ui->lineEdit_LeftHand->setText(ui->lineEdit_LeftHand->text() + s);
+        ui->lineEdit_LeftHand->setText(ui->lineEdit_LeftHand->text().append(s));
 }
 
 void MainWindow::updateRightHandField(QString s)
 {
-    ui->lineEdit_RightHand->setText(ui->lineEdit_RightHand->text() + s);
+    ui->lineEdit_RightHand->setText(ui->lineEdit_RightHand->text().append(s));
 }
 
 void MainWindow::on_btnZero_clicked()
