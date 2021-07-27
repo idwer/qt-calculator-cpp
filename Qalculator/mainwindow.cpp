@@ -101,34 +101,22 @@ void MainWindow::on_btnSeparator_clicked()
 
 void MainWindow::on_btnAdd_clicked()
 {
-    int64_t left = ui->lineEdit_LeftHand->text().toDouble();
-    int64_t right = ui->lineEdit_RightHand->text().toDouble();
-
-    ui->lineEdit->setText(QString::number(ArithmeticOperation::Add(left, right)));
+    left = ui->lineEdit_LeftHand->text().toDouble();
 }
 
 void MainWindow::on_btnSubtract_clicked()
 {
-    int64_t left = ui->lineEdit_LeftHand->text().toDouble();
-    int64_t right = ui->lineEdit_RightHand->text().toDouble();
-
-    ui->lineEdit->setText(QString::number(ArithmeticOperation::Subtract(left, right)));
+    left = ui->lineEdit_LeftHand->text().toDouble();
 }
 
 void MainWindow::on_btnDivide_clicked()
 {
-    int64_t left = ui->lineEdit_LeftHand->text().toDouble();
-    int64_t right = ui->lineEdit_RightHand->text().toDouble();
-
-    ui->lineEdit->setText(QString::number(ArithmeticOperation::Divide(left, right)));
+    left = ui->lineEdit_LeftHand->text().toDouble();
 }
 
 void MainWindow::on_btnMultiply_clicked()
 {
-    int64_t left = ui->lineEdit_LeftHand->text().toDouble();
-    int64_t right = ui->lineEdit_RightHand->text().toDouble();
-
-    ui->lineEdit->setText(QString::number(ArithmeticOperation::Multiply(left, right)));
+    left = ui->lineEdit_LeftHand->text().toDouble();
 }
 
 void MainWindow::on_btnCE_clicked()
