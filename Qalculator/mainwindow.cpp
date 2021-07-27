@@ -8,8 +8,8 @@ bool subtract = false;
 bool divide = false;
 bool multiply = false;
 
-double left = 0;
-double right = 0;
+double left = 0.0;
+double right = 0.0;
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -133,8 +133,8 @@ void MainWindow::on_btnMultiply_clicked()
 
 void MainWindow::on_btnCE_clicked()
 {
-    left = 0;
-    right = 0;
+    left = 0.0;
+    right = 0.0;
 
     ui->lineEdit->clear();
     ui->lineEdit_LeftHand->clear();
