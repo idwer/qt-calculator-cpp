@@ -93,13 +93,11 @@ void MainWindow::on_btnEight_clicked()
 void MainWindow::on_btnNine_clicked()
 {
     updateFields(ui->btnNine->text());
-
 }
 
 void MainWindow::on_btnSeparator_clicked()
 {
     updateFields(ui->btnSeparator->text());
-
 }
 
 void MainWindow::on_btnAdd_clicked()
