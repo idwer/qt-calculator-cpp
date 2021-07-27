@@ -17,6 +17,8 @@ public:
 
 private:
     Ui::MainWindow *ui;
+    void updateLeftHandField(QString);
+    void updateRightHandField(QString);
 
 private slots:
     void on_btnSeparator_clicked();

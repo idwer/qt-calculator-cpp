@@ -23,6 +23,16 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
+void MainWindow::updateLeftHandField(QString s)
+{
+        ui->lineEdit_LeftHand->setText(ui->lineEdit_LeftHand->text() + s);
+}
+
+void MainWindow::updateRightHandField(QString s)
+{
+    ui->lineEdit_RightHand->setText(ui->lineEdit_RightHand->text() + s);
+}
+
 void MainWindow::on_btnZero_clicked()
 {
     ui->lineEdit_LeftHand->setText(ui->lineEdit_LeftHand->text() + ui->btnZero->text());
