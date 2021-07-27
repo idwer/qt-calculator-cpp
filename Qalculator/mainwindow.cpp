@@ -8,8 +8,8 @@ bool subtract = false;
 bool divide = false;
 bool multiply = false;
 
-int64_t left = 0;
-int64_t right = 0;
+double left = 0;
+double right = 0;
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
