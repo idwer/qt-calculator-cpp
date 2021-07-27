@@ -150,6 +150,7 @@ void MainWindow::on_btnCE_clicked()
 
 void MainWindow::on_btnResult_clicked()
 {
+    right = ui->lineEdit_RightHand->text().toDouble();
     QColor color = ui->btnResult->palette().color(QWidget::backgroundRole());
 
     if (color.isValid()) {
