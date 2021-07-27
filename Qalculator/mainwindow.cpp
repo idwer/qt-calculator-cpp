@@ -3,6 +3,11 @@
 
 #include "arithmeticoperation.h"
 
+bool add = false;
+bool subtract = false;
+bool divide = false;
+bool multiply = false;
+
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
