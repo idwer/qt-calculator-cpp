@@ -4,10 +4,10 @@
 class ArithmeticOperation
 {
 public:
-    static double Add(float left, float right);
-    static double Subtract(float left, float right);
-    static double Divide(float left, float right);
-    static double Multiply(float left, float right);
+    static double Add(double left, double right);
+    static double Subtract(double left, double right);
+    static double Divide(double left, double right);
+    static double Multiply(double left, double right);
 };
 
 #endif // ARITHMETICOPERATION_H
