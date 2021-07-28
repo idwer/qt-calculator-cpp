@@ -8,11 +8,11 @@ bool subtract = false;
 bool divide = false;
 bool multiply = false;
 
-double left = 0.0;
-double right = 0.0;
+double leftHandValue = 0.0;
+double rightHandValue = 0.0;
 
 const QColor GREEN = QColor(Qt::green);
-const QString STYLE_BGCOLOR_STRING = QString("background-color: %1").arg(GREEN.name());
+const QString STR_STYLE_BGCOLOR = QString("background-color: %1").arg(GREEN.name());
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -26,149 +26,149 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-void MainWindow::updateLeftHandField(QString s)
+void MainWindow::updateLeftHandText(QString text)
 {
-        ui->lineEdit_LeftHand->setText(ui->lineEdit_LeftHand->text().append(s));
+        ui->leftHandText->setText(ui->leftHandText->text().append(text));
 }
 
-void MainWindow::updateRightHandField(QString s)
+void MainWindow::updateRightHandText(QString text)
 {
-    ui->lineEdit_RightHand->setText(ui->lineEdit_RightHand->text().append(s));
+    ui->rightHandText->setText(ui->rightHandText->text().append(text));
 }
 
-void MainWindow::updateFields(QString s)
+void MainWindow::updateText(QString text)
 {
     if (add || subtract || divide || multiply) {
-        updateRightHandField(s);
+        updateRightHandText(text);
     } else {
-        updateLeftHandField(s);
+        updateLeftHandText(text);
     }
 }
 
 void MainWindow::on_btnZero_clicked()
 {
-    updateFields(ui->btnZero->text());
+    updateText(ui->btnZero->text());
 }
 
 void MainWindow::on_btnOne_clicked()
 {
-    updateFields(ui->btnOne->text());
+    updateText(ui->btnOne->text());
 }
 
 void MainWindow::on_btnTwo_clicked()
 {
-    updateFields(ui->btnTwo->text());
+    updateText(ui->btnTwo->text());
 }
 
 void MainWindow::on_btnThree_clicked()
 {
-    updateFields(ui->btnThree->text());
+    updateText(ui->btnThree->text());
 }
 
 void MainWindow::on_btnFour_clicked()
 {
-    updateFields(ui->btnFour->text());
+    updateText(ui->btnFour->text());
 }
 
 void MainWindow::on_btnFive_clicked()
 {
-    updateFields(ui->btnFive->text());
+    updateText(ui->btnFive->text());
 }
 
 void MainWindow::on_btnSix_clicked()
 {
-    updateFields(ui->btnSix->text());
+    updateText(ui->btnSix->text());
 }
 
 void MainWindow::on_btnSeven_clicked()
 {
-    updateFields(ui->btnSeven->text());
+    updateText(ui->btnSeven->text());
 }
 
 void MainWindow::on_btnEight_clicked()
 {
-    updateFields(ui->btnEight->text());
+    updateText(ui->btnEight->text());
 }
 
 void MainWindow::on_btnNine_clicked()
 {
-    updateFields(ui->btnNine->text());
+    updateText(ui->btnNine->text());
 }
 
 void MainWindow::on_btnSeparator_clicked()
 {
-    updateFields(ui->btnSeparator->text());
+    updateText(ui->btnSeparator->text());
 }
 
 void MainWindow::on_btnAdd_clicked()
 {
-    left = ui->lineEdit_LeftHand->text().toDouble();
+    leftHandValue = ui->leftHandText->text().toDouble();
 
-    ui->btnAdd->setStyleSheet(STYLE_BGCOLOR_STRING);
+    ui->btnAdd->setStyleSheet(STR_STYLE_BGCOLOR);
 
     add = true;
 }
 
 void MainWindow::on_btnSubtract_clicked()
 {
-    left = ui->lineEdit_LeftHand->text().toDouble();
+    leftHandValue = ui->leftHandText->text().toDouble();
 
-    ui->btnSubtract->setStyleSheet(STYLE_BGCOLOR_STRING);
+    ui->btnSubtract->setStyleSheet(STR_STYLE_BGCOLOR);
 
     subtract = true;
 }
 
 void MainWindow::on_btnDivide_clicked()
 {
-    left = ui->lineEdit_LeftHand->text().toDouble();
+    leftHandValue = ui->leftHandText->text().toDouble();
 
-    ui->btnDivide->setStyleSheet(STYLE_BGCOLOR_STRING);
+    ui->btnDivide->setStyleSheet(STR_STYLE_BGCOLOR);
 
     divide = true;
 }
 
 void MainWindow::on_btnMultiply_clicked()
 {
-    left = ui->lineEdit_LeftHand->text().toDouble();
+    leftHandValue = ui->leftHandText->text().toDouble();
 
-    ui->btnMultiply->setStyleSheet(STYLE_BGCOLOR_STRING);
+    ui->btnMultiply->setStyleSheet(STR_STYLE_BGCOLOR);
 
     multiply = true;
 }
 
 void MainWindow::on_btnCE_clicked()
 {
-    left = 0.0;
-    right = 0.0;
+    leftHandValue = 0.0;
+    rightHandValue = 0.0;
 
-    ui->lineEdit->clear();
-    ui->lineEdit_LeftHand->clear();
-    ui->lineEdit_RightHand->clear();
+    ui->resultText->clear();
+    ui->leftHandText->clear();
+    ui->rightHandText->clear();
 }
 
 void MainWindow::on_btnResult_clicked()
 {
-    right = ui->lineEdit_RightHand->text().toDouble();
+    rightHandValue = ui->rightHandText->text().toDouble();
     QColor color = ui->btnResult->palette().color(QWidget::backgroundRole());
 
     if (add)
-        ui->lineEdit->setText(QString::number(ArithmeticOperation::Add(left, right)));
+        ui->resultText->setText(QString::number(ArithmeticOperation::Add(leftHandValue, rightHandValue)));
 
     if (subtract)
-        ui->lineEdit->setText(QString::number(ArithmeticOperation::Subtract(left, right)));
+        ui->resultText->setText(QString::number(ArithmeticOperation::Subtract(leftHandValue, rightHandValue)));
 
     if (divide)
-        ui->lineEdit->setText(QString::number(ArithmeticOperation::Divide(left, right)));
+        ui->resultText->setText(QString::number(ArithmeticOperation::Divide(leftHandValue, rightHandValue)));
 
     if (multiply)
-        ui->lineEdit->setText(QString::number(ArithmeticOperation::Multiply(left, right)));
+        ui->resultText->setText(QString::number(ArithmeticOperation::Multiply(leftHandValue, rightHandValue)));
 
     if (color.isValid()) {
-        QString s = QString("background-color: %1").arg(color.name());
-        ui->btnAdd->setStyleSheet(s);
-        ui->btnDivide->setStyleSheet(s);
-        ui->btnSubtract->setStyleSheet(s);
-        ui->btnMultiply->setStyleSheet(s);
+        QString strColor = QString("background-color: %1").arg(color.name());
+        ui->btnAdd->setStyleSheet(strColor);
+        ui->btnDivide->setStyleSheet(strColor);
+        ui->btnSubtract->setStyleSheet(strColor);
+        ui->btnMultiply->setStyleSheet(strColor);
     }
 
     /* reset state */
