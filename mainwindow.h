@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QPushButton>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -20,6 +21,8 @@ private:
     void updateLeftHandText(QString);
     void updateRightHandText(QString);
     void updateText(QString);
+    void resetButtonColor();
+    void resetButtonColor(QPushButton *);
 
 private slots:
     void on_btnSeparator_clicked();

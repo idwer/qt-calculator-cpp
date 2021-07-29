@@ -13,6 +13,7 @@ double rightHandValue = 0.0;
 
 const QColor GREEN = QColor(Qt::green);
 const QString STR_BGCOLOR_GREEN = QString("background-color: %1").arg(GREEN.name());
+const QString STR_BGCOLOR_DEFAULT = QString("background-color: #efefef");
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -42,6 +43,38 @@ void MainWindow::updateText(QString text)
         updateRightHandText(text);
     } else {
         updateLeftHandText(text);
+    }
+}
+
+void MainWindow::resetButtonColor(QPushButton *button)
+{
+    button->setStyleSheet(STR_BGCOLOR_DEFAULT);
+}
+
+void MainWindow::resetButtonColor()
+{
+    if (subtract || divide || multiply) {
+        resetButtonColor(ui->btnSubtract);
+        resetButtonColor(ui->btnDivide);
+        resetButtonColor(ui->btnMultiply);
+    }
+
+    if (add || subtract || multiply) {
+        resetButtonColor(ui->btnAdd);
+        resetButtonColor(ui->btnSubtract);
+        resetButtonColor(ui->btnMultiply);
+    }
+
+    if (add || divide || multiply) {
+        resetButtonColor(ui->btnAdd);
+        resetButtonColor(ui->btnDivide);
+        resetButtonColor(ui->btnMultiply);
+    }
+
+    if (add || subtract || divide) {
+        resetButtonColor(ui->btnAdd);
+        resetButtonColor(ui->btnSubtract);
+        resetButtonColor(ui->btnDivide);
     }
 }
 
@@ -102,6 +135,8 @@ void MainWindow::on_btnSeparator_clicked()
 
 void MainWindow::on_btnAdd_clicked()
 {
+    resetButtonColor();
+
     leftHandValue = ui->leftHandText->text().toDouble();
 
     ui->btnAdd->setStyleSheet(STR_BGCOLOR_GREEN);
@@ -109,8 +144,11 @@ void MainWindow::on_btnAdd_clicked()
     add = true;
 }
 
+
 void MainWindow::on_btnSubtract_clicked()
 {
+    resetButtonColor();
+
     leftHandValue = ui->leftHandText->text().toDouble();
 
     ui->btnSubtract->setStyleSheet(STR_BGCOLOR_GREEN);
@@ -120,6 +158,8 @@ void MainWindow::on_btnSubtract_clicked()
 
 void MainWindow::on_btnDivide_clicked()
 {
+    resetButtonColor();
+
     leftHandValue = ui->leftHandText->text().toDouble();
 
     ui->btnDivide->setStyleSheet(STR_BGCOLOR_GREEN);
@@ -129,6 +169,8 @@ void MainWindow::on_btnDivide_clicked()
 
 void MainWindow::on_btnMultiply_clicked()
 {
+    resetButtonColor();
+
     leftHandValue = ui->leftHandText->text().toDouble();
 
     ui->btnMultiply->setStyleSheet(STR_BGCOLOR_GREEN);
