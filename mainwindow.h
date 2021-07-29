@@ -21,6 +21,7 @@ private:
     void updateLeftHandText(QString);
     void updateRightHandText(QString);
     void updateText(QString);
+    void resetState();
     void resetGuiState();
     void resetButtonColor();
     void resetButtonColor(QPushButton *);

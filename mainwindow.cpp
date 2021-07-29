@@ -78,6 +78,14 @@ void MainWindow::resetButtonColor()
     }
 }
 
+void MainWindow::resetState()
+{
+    add = false;
+    subtract = false;
+    divide = false;
+    multiply = false;
+}
+
 void MainWindow::resetGuiState()
 {
     ui->btnAdd->setStyleSheet(STR_BGCOLOR_DEFAULT);
@@ -209,6 +217,7 @@ void MainWindow::on_btnCE_clicked()
     ui->leftHandText->clear();
     ui->rightHandText->clear();
 
+    resetState();
     resetGuiState();
 }
 
@@ -229,11 +238,6 @@ void MainWindow::on_btnResult_clicked()
     if (multiply)
         ui->resultText->setText(QString::number(ArithmeticOperation::Multiply(leftHandValue, rightHandValue)));
 
-    /* reset state */
-    add = false;
-    subtract = false;
-    divide = false;
-    multiply = false;
-
+    resetState();
     resetGuiState();
 }
