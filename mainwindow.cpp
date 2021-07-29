@@ -12,7 +12,7 @@ double leftHandValue = 0.0;
 double rightHandValue = 0.0;
 
 const QColor GREEN = QColor(Qt::green);
-const QString STR_STYLE_BGCOLOR = QString("background-color: %1").arg(GREEN.name());
+const QString STR_BGCOLOR_GREEN = QString("background-color: %1").arg(GREEN.name());
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -104,7 +104,7 @@ void MainWindow::on_btnAdd_clicked()
 {
     leftHandValue = ui->leftHandText->text().toDouble();
 
-    ui->btnAdd->setStyleSheet(STR_STYLE_BGCOLOR);
+    ui->btnAdd->setStyleSheet(STR_BGCOLOR_GREEN);
 
     add = true;
 }
@@ -113,7 +113,7 @@ void MainWindow::on_btnSubtract_clicked()
 {
     leftHandValue = ui->leftHandText->text().toDouble();
 
-    ui->btnSubtract->setStyleSheet(STR_STYLE_BGCOLOR);
+    ui->btnSubtract->setStyleSheet(STR_BGCOLOR_GREEN);
 
     subtract = true;
 }
@@ -122,7 +122,7 @@ void MainWindow::on_btnDivide_clicked()
 {
     leftHandValue = ui->leftHandText->text().toDouble();
 
-    ui->btnDivide->setStyleSheet(STR_STYLE_BGCOLOR);
+    ui->btnDivide->setStyleSheet(STR_BGCOLOR_GREEN);
 
     divide = true;
 }
@@ -131,7 +131,7 @@ void MainWindow::on_btnMultiply_clicked()
 {
     leftHandValue = ui->leftHandText->text().toDouble();
 
-    ui->btnMultiply->setStyleSheet(STR_STYLE_BGCOLOR);
+    ui->btnMultiply->setStyleSheet(STR_BGCOLOR_GREEN);
 
     multiply = true;
 }
