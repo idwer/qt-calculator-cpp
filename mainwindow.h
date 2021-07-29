@@ -43,6 +43,7 @@ private slots:
     void on_btnMultiply_clicked();
     void on_btnResult_clicked();
 
+    void on_btnClear_clicked();
     void on_btnCE_clicked();
 };
 #endif // MAINWINDOW_H

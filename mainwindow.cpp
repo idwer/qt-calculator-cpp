@@ -178,6 +178,21 @@ void MainWindow::on_btnMultiply_clicked()
     multiply = true;
 }
 
+void MainWindow::on_btnClear_clicked()
+{
+    if (!add && !subtract && !divide && !multiply) {
+        ui->leftHandText->clear();
+        ui->rightHandText->clear();
+        return;
+    }
+
+    if (add || subtract || divide || multiply) {
+        ui->rightHandText->clear();
+    } else {
+        ui->leftHandText->clear();
+    }
+}
+
 void MainWindow::on_btnCE_clicked()
 {
     leftHandValue = 0.0;
