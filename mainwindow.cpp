@@ -152,7 +152,6 @@ void MainWindow::on_btnAdd_clicked()
     add = true;
 }
 
-
 void MainWindow::on_btnSubtract_clicked()
 {
     resetButtonColor();
