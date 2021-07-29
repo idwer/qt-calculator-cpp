@@ -209,6 +209,8 @@ void MainWindow::on_btnCE_clicked()
     ui->resultText->clear();
     ui->leftHandText->clear();
     ui->rightHandText->clear();
+
+    resetGuiState();
 }
 
 void MainWindow::on_btnResult_clicked()
