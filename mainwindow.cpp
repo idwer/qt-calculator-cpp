@@ -228,17 +228,11 @@ void MainWindow::on_btnResult_clicked()
     if (multiply)
         ui->resultText->setText(QString::number(ArithmeticOperation::Multiply(leftHandValue, rightHandValue)));
 
-    if (color.isValid()) {
-        QString strColor = QString("background-color: %1").arg(color.name());
-        ui->btnAdd->setStyleSheet(strColor);
-        ui->btnDivide->setStyleSheet(strColor);
-        ui->btnSubtract->setStyleSheet(strColor);
-        ui->btnMultiply->setStyleSheet(strColor);
-    }
-
     /* reset state */
     add = false;
     subtract = false;
     divide = false;
     multiply = false;
+
+    resetGuiState();
 }
