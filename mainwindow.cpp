@@ -78,6 +78,14 @@ void MainWindow::resetButtonColor()
     }
 }
 
+void MainWindow::resetGuiState()
+{
+    ui->btnAdd->setStyleSheet(STR_BGCOLOR_DEFAULT);
+    ui->btnDivide->setStyleSheet(STR_BGCOLOR_DEFAULT);
+    ui->btnSubtract->setStyleSheet(STR_BGCOLOR_DEFAULT);
+    ui->btnMultiply->setStyleSheet(STR_BGCOLOR_DEFAULT);
+}
+
 void MainWindow::on_btnZero_clicked()
 {
     updateText(ui->btnZero->text());
