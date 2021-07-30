@@ -214,6 +214,7 @@ void MainWindow::on_btnAdd_clicked()
     if (ui->leftHandText->text().isEmpty())
         return;
 
+    /* Toggle the background color of other buttons. */
     resetButtonColor();
 
     leftHandValue = ui->leftHandText->text().toDouble();
@@ -232,6 +233,7 @@ void MainWindow::on_btnSubtract_clicked()
     if (ui->leftHandText->text().isEmpty())
         return;
 
+    /* Toggle the background color of other buttons. */
     resetButtonColor();
 
     leftHandValue = ui->leftHandText->text().toDouble();
@@ -250,6 +252,7 @@ void MainWindow::on_btnDivide_clicked()
     if (ui->leftHandText->text().isEmpty())
         return;
 
+    /* Toggle the background color of other buttons. */
     resetButtonColor();
 
     leftHandValue = ui->leftHandText->text().toDouble();
@@ -268,6 +271,7 @@ void MainWindow::on_btnMultiply_clicked()
     if (ui->leftHandText->text().isEmpty())
         return;
 
+    /* Toggle the background color of other buttons. */
     resetButtonColor();
 
     leftHandValue = ui->leftHandText->text().toDouble();
