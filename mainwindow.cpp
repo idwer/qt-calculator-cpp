@@ -3,6 +3,7 @@
 
 #include "arithmeticoperation.h"
 
+/* Provide a way of storing button state. */
 bool add = false;
 bool subtract = false;
 bool divide = false;
@@ -27,18 +28,31 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
+/*!
+ * \brief MainWindow::updateLeftHandText
+ * \param text is the number, in QString form, that will be appended to existing text.
+ */
 void MainWindow::updateLeftHandText(QString text)
 {
         ui->leftHandText->setText(ui->leftHandText->text().append(text));
 }
 
+/*!
+ * \brief MainWindow::updateRightHandText
+ * \param text is the number, in QString form, that will be appended to existing text.
+ */
 void MainWindow::updateRightHandText(QString text)
 {
     ui->rightHandText->setText(ui->rightHandText->text().append(text));
 }
 
+/*!
+ * \brief MainWindow::updateText
+ * \param text is the number, in QString form, that will be appended to existing text.
+ */
 void MainWindow::updateText(QString text)
 {
+    /* When the user has decided to perform an action, update text in either the left or right box. */
     if (add || subtract || divide || multiply) {
         updateRightHandText(text);
     } else {
@@ -46,11 +60,18 @@ void MainWindow::updateText(QString text)
     }
 }
 
+/*!
+ * \brief MainWindow::resetButtonColor
+ * \param button wil have its background color changed.
+ */
 void MainWindow::resetButtonColor(QPushButton *button)
 {
     button->setStyleSheet(STR_BGCOLOR_DEFAULT);
 }
 
+/*!
+ * \brief MainWindow::resetButtonColor
+ */
 void MainWindow::resetButtonColor()
 {
     if (subtract || divide || multiply) {
@@ -78,6 +99,9 @@ void MainWindow::resetButtonColor()
     }
 }
 
+/*!
+ * \brief MainWindow::resetState
+ */
 void MainWindow::resetState()
 {
     add = false;
@@ -86,6 +110,9 @@ void MainWindow::resetState()
     multiply = false;
 }
 
+/*!
+ * \brief MainWindow::resetGuiState
+ */
 void MainWindow::resetGuiState()
 {
     ui->btnAdd->setStyleSheet(STR_BGCOLOR_DEFAULT);
@@ -94,61 +121,97 @@ void MainWindow::resetGuiState()
     ui->btnMultiply->setStyleSheet(STR_BGCOLOR_DEFAULT);
 }
 
+/*!
+ * \brief MainWindow::on_btnZero_clicked
+ */
 void MainWindow::on_btnZero_clicked()
 {
     updateText(ui->btnZero->text());
 }
 
+/*!
+ * \brief MainWindow::on_btnOne_clicked
+ */
 void MainWindow::on_btnOne_clicked()
 {
     updateText(ui->btnOne->text());
 }
 
+/*!
+ * \brief MainWindow::on_btnTwo_clicked
+ */
 void MainWindow::on_btnTwo_clicked()
 {
     updateText(ui->btnTwo->text());
 }
 
+/*!
+ * \brief MainWindow::on_btnThree_clicked
+ */
 void MainWindow::on_btnThree_clicked()
 {
     updateText(ui->btnThree->text());
 }
 
+/*!
+ * \brief MainWindow::on_btnFour_clicked
+ */
 void MainWindow::on_btnFour_clicked()
 {
     updateText(ui->btnFour->text());
 }
 
+/*!
+ * \brief MainWindow::on_btnFive_clicked
+ */
 void MainWindow::on_btnFive_clicked()
 {
     updateText(ui->btnFive->text());
 }
 
+/*!
+ * \brief MainWindow::on_btnSix_clicked
+ */
 void MainWindow::on_btnSix_clicked()
 {
     updateText(ui->btnSix->text());
 }
 
+/*!
+ * \brief MainWindow::on_btnSeven_clicked
+ */
 void MainWindow::on_btnSeven_clicked()
 {
     updateText(ui->btnSeven->text());
 }
 
+/*!
+ * \brief MainWindow::on_btnEight_clicked
+ */
 void MainWindow::on_btnEight_clicked()
 {
     updateText(ui->btnEight->text());
 }
 
+/*!
+ * \brief MainWindow::on_btnNine_clicked
+ */
 void MainWindow::on_btnNine_clicked()
 {
     updateText(ui->btnNine->text());
 }
 
+/*!
+ * \brief MainWindow::on_btnSeparator_clicked
+ */
 void MainWindow::on_btnSeparator_clicked()
 {
     updateText(ui->btnSeparator->text());
 }
 
+/*!
+ * \brief MainWindow::on_btnAdd_clicked
+ */
 void MainWindow::on_btnAdd_clicked()
 {
     resetButtonColor();
@@ -160,6 +223,9 @@ void MainWindow::on_btnAdd_clicked()
     add = true;
 }
 
+/*!
+ * \brief MainWindow::on_btnSubtract_clicked
+ */
 void MainWindow::on_btnSubtract_clicked()
 {
     resetButtonColor();
@@ -171,6 +237,9 @@ void MainWindow::on_btnSubtract_clicked()
     subtract = true;
 }
 
+/*!
+ * \brief MainWindow::on_btnDivide_clicked
+ */
 void MainWindow::on_btnDivide_clicked()
 {
     resetButtonColor();
@@ -182,6 +251,9 @@ void MainWindow::on_btnDivide_clicked()
     divide = true;
 }
 
+/*!
+ * \brief MainWindow::on_btnMultiply_clicked
+ */
 void MainWindow::on_btnMultiply_clicked()
 {
     resetButtonColor();
@@ -193,6 +265,9 @@ void MainWindow::on_btnMultiply_clicked()
     multiply = true;
 }
 
+/*!
+ * \brief MainWindow::on_btnClear_clicked
+ */
 void MainWindow::on_btnClear_clicked()
 {
     if (!add && !subtract && !divide && !multiply) {
@@ -208,6 +283,9 @@ void MainWindow::on_btnClear_clicked()
     }
 }
 
+/*!
+ * \brief MainWindow::on_btnCE_clicked
+ */
 void MainWindow::on_btnCE_clicked()
 {
     leftHandValue = 0.0;
@@ -221,6 +299,9 @@ void MainWindow::on_btnCE_clicked()
     resetGuiState();
 }
 
+/*!
+ * \brief MainWindow::on_btnResult_clicked
+ */
 void MainWindow::on_btnResult_clicked()
 {
     rightHandValue = ui->rightHandText->text().toDouble();
