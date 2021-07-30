@@ -111,6 +111,12 @@ void MainWindow::resetState()
  */
 void MainWindow::resetGuiState()
 {
+    /* Change other buttons' state. */
+    ui->btnAdd->setEnabled(true);
+    ui->btnSubtract->setEnabled(true);
+    ui->btnDivide->setEnabled(true);
+    ui->btnMultiply->setEnabled(true);
+
     ui->btnAdd->setStyleSheet(STR_BGCOLOR_DEFAULT);
     ui->btnDivide->setStyleSheet(STR_BGCOLOR_DEFAULT);
     ui->btnSubtract->setStyleSheet(STR_BGCOLOR_DEFAULT);
@@ -217,6 +223,11 @@ void MainWindow::on_btnAdd_clicked()
     /* Toggle the background color of other buttons. */
     resetButtonColor();
 
+    /* Change other buttons' state. */
+    ui->btnSubtract->setDisabled(true);
+    ui->btnDivide->setDisabled(true);
+    ui->btnMultiply->setDisabled(true);
+
     leftHandValue = ui->leftHandText->text().toDouble();
 
     ui->btnAdd->setStyleSheet(STR_BGCOLOR_GREEN);
@@ -235,6 +246,11 @@ void MainWindow::on_btnSubtract_clicked()
 
     /* Toggle the background color of other buttons. */
     resetButtonColor();
+
+    /* Change other buttons' state. */
+    ui->btnAdd->setDisabled(true);
+    ui->btnDivide->setDisabled(true);
+    ui->btnMultiply->setDisabled(true);
 
     leftHandValue = ui->leftHandText->text().toDouble();
 
@@ -255,6 +271,11 @@ void MainWindow::on_btnDivide_clicked()
     /* Toggle the background color of other buttons. */
     resetButtonColor();
 
+    /* Change other buttons' state. */
+    ui->btnAdd->setDisabled(true);
+    ui->btnSubtract->setDisabled(true);
+    ui->btnMultiply->setDisabled(true);
+
     leftHandValue = ui->leftHandText->text().toDouble();
 
     ui->btnDivide->setStyleSheet(STR_BGCOLOR_GREEN);
@@ -273,6 +294,11 @@ void MainWindow::on_btnMultiply_clicked()
 
     /* Toggle the background color of other buttons. */
     resetButtonColor();
+
+    /* Change other buttons' state. */
+    ui->btnAdd->setDisabled(true);
+    ui->btnSubtract->setDisabled(true);
+    ui->btnDivide->setDisabled(true);
 
     leftHandValue = ui->leftHandText->text().toDouble();
 
