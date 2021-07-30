@@ -18,6 +18,11 @@ public:
 
 private:
     Ui::MainWindow *ui;
+
+    const QColor GREEN = QColor(Qt::green);
+    const QString STR_BGCOLOR_GREEN = QString("background-color: %1").arg(GREEN.name());
+    const QString STR_BGCOLOR_DEFAULT = QString("background-color: #efefef");
+
     void updateLeftHandText(QString);
     void updateRightHandText(QString);
     void updateText(QString);

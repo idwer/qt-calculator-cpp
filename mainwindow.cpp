@@ -12,10 +12,6 @@ bool multiply = false;
 double leftHandValue = 0.0;
 double rightHandValue = 0.0;
 
-const QColor GREEN = QColor(Qt::green);
-const QString STR_BGCOLOR_GREEN = QString("background-color: %1").arg(GREEN.name());
-const QString STR_BGCOLOR_DEFAULT = QString("background-color: #efefef");
-
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
