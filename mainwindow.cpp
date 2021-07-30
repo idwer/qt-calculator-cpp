@@ -210,6 +210,10 @@ void MainWindow::on_btnSeparator_clicked()
  */
 void MainWindow::on_btnAdd_clicked()
 {
+    /* Don't respond on button clicks until a number is entered. */
+    if (ui->leftHandText->text().isEmpty())
+        return;
+
     resetButtonColor();
 
     leftHandValue = ui->leftHandText->text().toDouble();
@@ -224,6 +228,10 @@ void MainWindow::on_btnAdd_clicked()
  */
 void MainWindow::on_btnSubtract_clicked()
 {
+    /* Don't respond on button clicks until a number is entered. */
+    if (ui->leftHandText->text().isEmpty())
+        return;
+
     resetButtonColor();
 
     leftHandValue = ui->leftHandText->text().toDouble();
@@ -238,6 +246,10 @@ void MainWindow::on_btnSubtract_clicked()
  */
 void MainWindow::on_btnDivide_clicked()
 {
+    /* Don't respond on button clicks until a number is entered. */
+    if (ui->leftHandText->text().isEmpty())
+        return;
+
     resetButtonColor();
 
     leftHandValue = ui->leftHandText->text().toDouble();
@@ -252,6 +264,10 @@ void MainWindow::on_btnDivide_clicked()
  */
 void MainWindow::on_btnMultiply_clicked()
 {
+    /* Don't respond on button clicks until a number is entered. */
+    if (ui->leftHandText->text().isEmpty())
+        return;
+
     resetButtonColor();
 
     leftHandValue = ui->leftHandText->text().toDouble();
