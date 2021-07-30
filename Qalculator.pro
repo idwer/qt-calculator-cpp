@@ -16,16 +16,16 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
-    arithmeticoperation.cpp \
-    main.cpp \
-    mainwindow.cpp
+    src/main.cpp \
+    src/lib/arithmeticoperation.cpp \
+    src/gui/mainwindow.cpp
 
 HEADERS += \
-    arithmeticoperation.h \
-    mainwindow.h
+    src/lib/arithmeticoperation.h \
+    src/gui/mainwindow.h
 
 FORMS += \
-    mainwindow.ui
+    resources/mainwindow.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
