@@ -305,7 +305,6 @@ void MainWindow::on_btnCE_clicked()
 void MainWindow::on_btnResult_clicked()
 {
     rightHandValue = ui->rightHandText->text().toDouble();
-    QColor color = ui->btnResult->palette().color(QWidget::backgroundRole());
 
     if (add)
         ui->resultText->setText(QString::number(ArithmeticOperation::Add(leftHandValue, rightHandValue)));
