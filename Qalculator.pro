@@ -17,11 +17,11 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
     src/main.cpp \
-    src/lib/arithmeticoperation.cpp \
+    include/arithmeticoperation.cpp \
     src/gui/mainwindow.cpp
 
 HEADERS += \
-    src/lib/arithmeticoperation.h \
+    include/arithmeticoperation.h \
     src/gui/mainwindow.h
 
 FORMS += \
