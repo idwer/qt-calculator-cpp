@@ -8,7 +8,10 @@ This has been developed on Ubuntu 20 LTS, using Qt Creator 4.11.0 and Qt 5.12.8.
 Install qt5-default, qt5-qmake-bin?
 Optionally install Qt Creator.
 
-To generate a Makefile, you should install and run 'qmake'.
+To build this program, run
+```
+cmake -B build . && make -C build
+```
 
 Adding new features using Qt Creator
 -----------------------------------
