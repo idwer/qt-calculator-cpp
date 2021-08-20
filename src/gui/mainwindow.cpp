@@ -1,7 +1,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 
-#include "include/arithmeticoperation.h"
+#include "lib/arithmeticoperation.h"
 
 /* Provide a way of storing button state. */
 bool add = false;
