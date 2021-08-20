@@ -1,4 +1,4 @@
-#include "include/arithmeticoperation.h"
+#include "lib/arithmeticoperation.h"
 
 /*!
  * \brief ArithmeticOperation::Add
